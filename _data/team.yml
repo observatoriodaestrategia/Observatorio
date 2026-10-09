@@ -1,123 +1,126 @@
-- category: "Liderança Científica"
+- category: Liderança Científica
   members:
-    - name: "Prof. Dr. Thiago Almeida"
-      role: "Líder"
-      institution: "Observatório da Estratégia"
-      image: "/images/thiago-almeida.jpeg"
-      lattes: ""
-    - name: "Profa. Dra. Cristina Dusi"
-      role: "Vice-líder"
-      institution: "Observatório da Estratégia"
-      image: "/images/cristina-dusi.jpeg"
-      lattes: ""
-
-- category: "Coordenadores de linha"
+  - name: Prof. Dr. Thiago Almeida
+    role: Líder
+    institution: Observatório da Estratégia
+    image: /images/thiago-almeida.jpeg
+    lattes: ''
+  - name: Profa. Dra. Cristina Dusi
+    role: Vice-líder
+    institution: Observatório da Estratégia
+    image: /images/cristina-dusi.jpeg
+    lattes: ''
+- category: Coordenadores de linha
   members:
-    - name: "Prof. Dr. Thiago Almeida"
-      role: "Coordenador"
-      institution: "Linha Imaginação Estratégica, Estudos de Futuros e IA"
-      image: "/images/thiago-almeida.jpeg"
-      lattes: ""
-    - name: "Profa. Dra. Cristina Dusi"
-      role: "Coordenadora"
-      institution: "Linha Empreendedorismo e Gestão de Empresas Familiares"
-      image: "/images/cristina-dusi.jpeg"
-      lattes: ""
-    - name: "Profa. Dra. Camila Braga"
-      role: "Coordenadora"
-      institution: "Linha Cultura, Consumo e Sociedade"
-      image: "/images/camila-braga.jpeg"
-      lattes: "http://lattes.cnpq.br/6477125105143473"
-    - name: "Profa. Dra. Tatiana Dornelas"
-      role: "Coordenadora"
-      institution: "Linha Estratégia, geopolítica e internacionalização no sul global"
-      image: "/images/tatiana-dornelas.jpeg"
-      lattes: ""
-    - name: "Prof. Dr. João Paulo Nascimento Silva"
-      role: "Coordenador"
-      institution: "Linha Inovação Tecnológica e Criação de Novos Mercados"
-      image: "/images/joao-paulo-nascimento.jpeg"
-      lattes: ""
-    - name: "Profa. Dra. Lívia Almada"
-      role: "Coordenadora"
-      institution: "Linha Conexões e Sistemas Sustentáveis (Sics)"
-      image: "/images/livia-almada.jpeg"
-      lattes: ""
-    - name: "Profa. Dra. Mariana Paes"
-      role: "Coordenadora"
-      institution: "Linha Monitoramento e Prospecção Tecnológicos com emprego de ciência de dados e IA"
-      image: "/images/mariana-paes.jpeg"
-      lattes: "http://lattes.cnpq.br/3414630952521126"
-
-- category: "Membros"
+  - name: Prof. Dr. Thiago Almeida
+    role: Coordenador
+    institution: Linha Imaginação Estratégica, Estudos de Futuros e IA
+    image: /images/thiago-almeida.jpeg
+    lattes: ''
+  - name: Profa. Dra. Cristina Dusi
+    role: Coordenadora
+    institution: Linha Empreendedorismo e Gestão de Empresas Familiares
+    image: /images/cristina-dusi.jpeg
+    lattes: ''
+  - name: Profa. Dra. Camila Braga
+    role: Coordenadora
+    institution: Linha Cultura, Consumo e Sociedade
+    image: /images/camila-braga.jpeg
+    lattes: http://lattes.cnpq.br/6477125105143473
+  - name: Profa. Dra. Tatiana Dornelas
+    role: Coordenadora
+    institution: Linha Estratégia, geopolítica e internacionalização no sul global
+    image: /images/tatiana-dornelas.jpeg
+    lattes: ''
+  - name: Prof. Dr. João Paulo Nascimento Silva
+    role: Coordenador
+    institution: Linha Inovação Tecnológica e Criação de Novos Mercados
+    image: /images/joao-paulo-nascimento.jpeg
+    lattes: ''
+  - name: Profa. Dra. Lívia Almada
+    role: Coordenadora
+    institution: Linha Conexões e Sistemas Sustentáveis (Sics)
+    image: /images/livia-almada.jpeg
+    lattes: ''
+  - name: Profa. Dra. Mariana Paes
+    role: Coordenadora
+    institution: Linha Monitoramento e Prospecção Tecnológicos com emprego de ciência de dados e IA
+    image: /images/mariana-paes.jpeg
+    lattes: http://lattes.cnpq.br/3414630952521126
+- category: Membros
   members:
-    - name: "Prof. Dr. Rodrigo Oliveira"
-      role: "Pesquisador"
-      institution: "Efeitos da IA na Aprendizagem"
-      image: "https://ui-avatars.com/api/?name=Rodrigo+Oliveira&background=F1F5F9&color=334155"
-      lattes: ""
-    - name: "Profa. Dra. Eliane Christo"
-      role: "Pesquisadora"
-      institution: "Efeitos da IA na Aprendizagem"
-      image: "https://ui-avatars.com/api/?name=Eliane+Christo&background=F1F5F9&color=334155"
-      lattes: ""
-    - name: "Michael Menezes de Magalhães"
-      role: "Pesquisador"
-      institution: "Inovação Tecnológica e Deeptechs"
-      image: "https://ui-avatars.com/api/?name=Michael+Magalhães&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/0505469250293202"
-    - name: "Amanda Alvaro Marques de Oliveira"
-      role: "Pesquisadora"
-      institution: "Monitoramento e Prospecção Tecnológicos"
-      image: "https://ui-avatars.com/api/?name=Amanda+Alvaro&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/7179712113667602"
-    - name: "Nathan Vinicius Garcia Lopes"
-      role: "Pesquisador"
-      institution: "Monitoramento e Prospecção Tecnológicos"
-      image: "https://ui-avatars.com/api/?name=Nathan+Garcia&background=F1F5F9&color=334155"
-      lattes: ""
-    - name: "Camila Costa Rocha"
-      role: "Pesquisadora"
-      institution: "Monitoramento e Prospecção Tecnológicos"
-      image: "https://ui-avatars.com/api/?name=Camila+Rocha&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/4244837067868584"
-    - name: "David Zimmermann Fernandes"
-      role: "Pesquisador"
-      institution: "Monitoramento e Prospecção Tecnológicos"
-      image: "https://ui-avatars.com/api/?name=David+Zimmermann&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/0873163728224979"
-    - name: "Áureo Souto da Cunha Ramos"
-      role: "Pesquisador"
-      institution: "Monitoramento e Prospecção Tecnológicos"
-      image: "https://ui-avatars.com/api/?name=Áureo+Souto&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/9474852185251197"
-    - name: "Tiago Henrique Duarte e Ávila"
-      role: "Pesquisador"
-      institution: "Monitoramento e Prospecção Tecnológicos"
-      image: "https://ui-avatars.com/api/?name=Tiago+Duarte&background=F1F5F9&color=334155"
-      lattes: ""
-    - name: "Isabelle Carla Marques Guedes"
-      role: "Pesquisadora"
-      institution: "Estratégia, geopolítica no Sul Global"
-      image: "/images/isabelle.jpeg"
-      lattes: "http://lattes.cnpq.br/0681784943356286"
-    - name: "Carlina Barndão de Oliveira Zambrano"
-      role: "Pesquisadora"
-      institution: "Estratégia, geopolítica no Sul Global"
-      image: "https://ui-avatars.com/api/?name=Carlina+Zambrano&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/2407155692084739"
-    - name: "Thuanne Figueiredo Baptista"
-      role: "Pesquisadora"
-      institution: "Estratégia, geopolítica no Sul Global"
-      image: "https://ui-avatars.com/api/?name=Thuanne+Baptista&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/1881978031498063"
-    - name: "Fernanda Franklin Zangirolani"
-      role: "Pesquisadora"
-      institution: "Estratégia, geopolítica no Sul Global"
-      image: "https://ui-avatars.com/api/?name=Fernanda+Zangirolani&background=F1F5F9&color=334155"
-      lattes: "http://lattes.cnpq.br/2547932260495497"
-    - name: "Maria Eduarda Campos Goretti de Carvalho"
-      role: "Pesquisadora"
-      institution: "Estratégia, geopolítica no Sul Global"
-      image: "https://ui-avatars.com/api/?name=Maria+Eduarda&background=F1F5F9&color=334155"
-      lattes: ""
+  - name: Prof. Dr. Rodrigo Oliveira
+    role: Pesquisador
+    institution: Efeitos da IA na Aprendizagem
+    image: https://ui-avatars.com/api/?name=Rodrigo+Oliveira&background=F1F5F9&color=334155
+    lattes: ''
+  - name: Profa. Dra. Eliane Christo
+    role: Pesquisadora
+    institution: Efeitos da IA na Aprendizagem
+    image: https://ui-avatars.com/api/?name=Eliane+Christo&background=F1F5F9&color=334155
+    lattes: ''
+  - name: Michael Menezes de Magalhães
+    role: Pesquisador
+    institution: Inovação Tecnológica e Deeptechs
+    image: https://ui-avatars.com/api/?name=Michael+Magalhães&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/0505469250293202
+  - name: Amanda Alvaro Marques de Oliveira
+    role: Pesquisadora
+    institution: Monitoramento e Prospecção Tecnológicos
+    image: https://ui-avatars.com/api/?name=Amanda+Alvaro&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/7179712113667602
+  - name: Nathan Vinicius Garcia Lopes
+    role: Pesquisador
+    institution: Monitoramento e Prospecção Tecnológicos
+    image: https://ui-avatars.com/api/?name=Nathan+Garcia&background=F1F5F9&color=334155
+    lattes: ''
+  - name: Camila Costa Rocha
+    role: Pesquisadora
+    institution: Monitoramento e Prospecção Tecnológicos
+    image: https://ui-avatars.com/api/?name=Camila+Rocha&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/4244837067868584
+  - name: David Zimmermann Fernandes
+    role: Pesquisador
+    institution: Monitoramento e Prospecção Tecnológicos
+    image: https://ui-avatars.com/api/?name=David+Zimmermann&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/0873163728224979
+  - name: Áureo Souto da Cunha Ramos
+    role: Pesquisador
+    institution: Monitoramento e Prospecção Tecnológicos
+    image: https://ui-avatars.com/api/?name=Áureo+Souto&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/9474852185251197
+  - name: Tiago Henrique Duarte e Ávila
+    role: Pesquisador
+    institution: Monitoramento e Prospecção Tecnológicos
+    image: https://ui-avatars.com/api/?name=Tiago+Duarte&background=F1F5F9&color=334155
+    lattes: ''
+  - name: Isabelle Carla Marques Guedes
+    role: Pesquisadora
+    institution: Estratégia, geopolítica no Sul Global
+    image: /images/isabelle.jpeg
+    lattes: http://lattes.cnpq.br/0681784943356286
+  - name: Carlina Barndão de Oliveira Zambrano
+    role: Pesquisadora
+    institution: Estratégia, geopolítica no Sul Global
+    image: https://ui-avatars.com/api/?name=Carlina+Zambrano&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/2407155692084739
+  - name: Thuanne Figueiredo Baptista
+    role: Pesquisadora
+    institution: Estratégia, geopolítica no Sul Global
+    image: https://ui-avatars.com/api/?name=Thuanne+Baptista&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/1881978031498063
+  - name: Fernanda Franklin Zangirolani
+    role: Pesquisadora
+    institution: Estratégia, geopolítica no Sul Global
+    image: https://ui-avatars.com/api/?name=Fernanda+Zangirolani&background=F1F5F9&color=334155
+    lattes: http://lattes.cnpq.br/2547932260495497
+  - name: Maria Eduarda Campos Goretti de Carvalho
+    role: Pesquisadora
+    institution: Estratégia, geopolítica no Sul Global
+    image: https://ui-avatars.com/api/?name=Maria+Eduarda&background=F1F5F9&color=334155
+    lattes: ''
+  - name: Jéssica Carvalho
+    role: Pesquisadora
+    institution: Efeitos da IA na Aprendizagem
+    image: /images/Imagem.jpg
+    lattes: ''
