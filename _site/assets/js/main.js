@@ -143,99 +143,163 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// === Lógica do Botão de Idioma (Toggle) 100% Infalível ===
+// === Gerenciamento de Idioma / Google Translate ===
+
+// Limpa completamente o cookie 'googtrans' em todos os caminhos e subdomínios possíveis
+function clearGoogleTranslateCookies() {
+    const expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC; max-age=0;";
+    const paths = ["/", ""];
+
+    // 1. Limpeza no escopo local (sem domínio explícito / host-only)
+    paths.forEach(p => {
+        document.cookie = "googtrans=; " + expires + " path=" + p + ";";
+    });
+
+    // 2. Limpeza em todas as variações de subdomínio e domínio raiz
+    const host = window.location.hostname;
+    const parts = host.split('.');
+    while (parts.length > 1) {
+        const domain = parts.join('.');
+        paths.forEach(p => {
+            document.cookie = "googtrans=; " + expires + " path=" + p + "; domain=" + domain + ";";
+            document.cookie = "googtrans=; " + expires + " path=" + p + "; domain=." + domain + ";";
+        });
+        parts.shift();
+    }
+
+    // 3. Limpeza explícita para domínios de produção conhecidos
+    paths.forEach(p => {
+        document.cookie = "googtrans=; " + expires + " path=" + p + "; domain=observatoriodaestrategia.com;";
+        document.cookie = "googtrans=; " + expires + " path=" + p + "; domain=.observatoriodaestrategia.com;";
+        document.cookie = "googtrans=; " + expires + " path=" + p + "; domain=.vercel.app;";
+    });
+}
+
+// Define o cookie 'googtrans' com consistência de domínio para persistência
+function setGoogleTranslateCookie(targetLang) {
+    const val = "/pt/" + targetLang;
+    const paths = ["/"];
+    paths.forEach(p => {
+        document.cookie = "googtrans=" + val + "; path=" + p + ";";
+    });
+    const host = window.location.hostname;
+    const parts = host.split('.');
+    while (parts.length > 1) {
+        const domain = parts.join('.');
+        paths.forEach(p => {
+            document.cookie = "googtrans=" + val + "; path=" + p + "; domain=" + domain + ";";
+            document.cookie = "googtrans=" + val + "; path=" + p + "; domain=." + domain + ";";
+        });
+        parts.shift();
+    }
+}
+
+// Aplica a seleção de idioma no widget nativo do Google
+function triggerGoogleTranslateChange(lang) {
+    const teCombo = document.querySelector('.goog-te-combo');
+    if (!teCombo) return false;
+
+    if (lang === 'pt') {
+        teCombo.selectedIndex = 0;
+        teCombo.value = '';
+        teCombo.dispatchEvent(new Event('change'));
+        return true;
+    }
+
+    let enIndex = -1;
+    for (let i = 0; i < teCombo.options.length; i++) {
+        let optVal = teCombo.options[i].value.toLowerCase();
+        let optText = teCombo.options[i].text.toLowerCase();
+        if (optVal === 'en' || optText.includes('inglês') || optText.includes('english')) {
+            enIndex = i;
+            break;
+        }
+    }
+    if (enIndex !== -1) {
+        teCombo.selectedIndex = enIndex;
+    } else {
+        teCombo.value = 'en';
+    }
+    teCombo.dispatchEvent(new Event('change'));
+    return true;
+}
+
+// Alternar entre Português e Inglês
 window.toggleLanguage = function() {
     const langBtn = document.getElementById('lang-toggle-btn');
-    const teCombo = document.querySelector('.goog-te-combo');
-    
-    // O botão mostra 'EN' se o site estiver em PT, e 'PT' se estiver em EN.
-    const isCurrentlyEn = (langBtn && langBtn.innerText === 'PT');
+    const savedLang = localStorage.getItem('siteLang') || 'pt';
+    const btnText = langBtn ? langBtn.innerText.trim().toUpperCase() : '';
+
+    // Se o site está em inglês (salvo como 'en' ou botão mostrando 'PT')
+    const isCurrentlyEn = (savedLang === 'en' || btnText === 'PT');
 
     if (isCurrentlyEn) {
-        // Mudar para Português (Original)
-        // 1. Limpar os cookies que o Google Translate usa para lembrar do idioma
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.vercel.app";
-        
-        // 2. Resetar estados locais
+        // === RETORNAR PARA PORTUGUÊS (ORIGINAL) ===
         localStorage.setItem('siteLang', 'pt');
         if (langBtn) langBtn.innerText = 'EN';
 
-        // 3. Forçar um reload limpo da página para remover a tradução
+        // 1. Limpa completamente todos os cookies googtrans em todos os domínios e caminhos
+        clearGoogleTranslateCookies();
+
+        // 2. Remove parâmetros residuais de hash na URL se existirem
+        if (window.location.hash.includes('googtrans')) {
+            history.replaceState("", document.title, window.location.pathname + window.location.search);
+        }
+
+        // 3. Reseta o combo do Google Translate se disponível
+        triggerGoogleTranslateChange('pt');
+
+        // 4. Recarrega a página de forma limpa para restaurar o DOM nativo sem tags do Google
         window.location.reload();
     } else {
-        // Mudar para Inglês
+        // === MUDAR PARA INGLÊS ===
         localStorage.setItem('siteLang', 'en');
         if (langBtn) langBtn.innerText = 'PT';
 
-        if (teCombo) {
-            // Se o combo do Google já está disponível, traduz imediatamente
-            let enIndex = -1;
-            for (let i = 0; i < teCombo.options.length; i++) {
-                let optVal = teCombo.options[i].value.toLowerCase();
-                let optText = teCombo.options[i].text.toLowerCase();
-                if (optVal === 'en' || optText.includes('inglês') || optText.includes('english')) {
-                    enIndex = i;
-                    break;
-                }
-            }
-            if (enIndex !== -1) {
-                teCombo.selectedIndex = enIndex;
-                teCombo.dispatchEvent(new Event('change'));
-            } else {
-                teCombo.value = 'en';
-                teCombo.dispatchEvent(new Event('change'));
-            }
-        } else {
-            // Se o Google não carregou a tempo, o load() abaixo cuidará disso após recarregar
+        // Define os cookies de tradução para inglês
+        setGoogleTranslateCookie('en');
+
+        // Dispara tradução imediatamente no combo do Google se já estiver pronto
+        const triggered = triggerGoogleTranslateChange('en');
+        if (!triggered) {
             window.location.reload();
         }
     }
 };
 
-// Ao carregar a página, garante o estado correto IMEDIATAMENTE
+// Ao carregar o script (IMEDIATAMENTE), assegura o estado correto do botão e limpa cookies se estiver em PT
 (function() {
     const savedLang = localStorage.getItem('siteLang') || 'pt';
     const langBtn = document.getElementById('lang-toggle-btn');
-    
-    if (langBtn) {
-        if (savedLang === 'en') {
-            langBtn.innerText = 'PT';
-        } else {
-            langBtn.innerText = 'EN';
-        }
+
+    if (savedLang === 'en') {
+        if (langBtn) langBtn.innerText = 'PT';
+        setGoogleTranslateCookie('en');
+    } else {
+        if (langBtn) langBtn.innerText = 'EN';
+        // Impede que o Google Translate auto-traduza com cookies obsoletos caso o usuário esteja em PT
+        clearGoogleTranslateCookies();
     }
 })();
 
-// Aplica a tradução programática após o Google carregar (se estiver em EN)
+// Garante sincronização de estado após carregamento total da página
 window.addEventListener('load', function() {
     const savedLang = localStorage.getItem('siteLang') || 'pt';
     const langBtn = document.getElementById('lang-toggle-btn');
 
     if (savedLang === 'en') {
+        if (langBtn) langBtn.innerText = 'PT';
         let checkGoogleLoad = setInterval(function() {
             const teCombo = document.querySelector('.goog-te-combo');
             if (teCombo) {
                 clearInterval(checkGoogleLoad);
-                let enIndex = -1;
-                for (let i = 0; i < teCombo.options.length; i++) {
-                    let optVal = teCombo.options[i].value.toLowerCase();
-                    let optText = teCombo.options[i].text.toLowerCase();
-                    if (optVal === 'en' || optText.includes('inglês') || optText.includes('english')) {
-                        enIndex = i;
-                        break;
-                    }
-                }
-                if (enIndex !== -1) {
-                    teCombo.selectedIndex = enIndex;
-                } else {
-                    teCombo.value = 'en';
-                }
-                teCombo.dispatchEvent(new Event('change'));
+                triggerGoogleTranslateChange('en');
                 if (langBtn) langBtn.innerText = 'PT';
             }
-        }, 300);
-        setTimeout(() => clearInterval(checkGoogleLoad), 5000);
+        }, 200);
+        setTimeout(() => clearInterval(checkGoogleLoad), 6000);
+    } else {
+        if (langBtn) langBtn.innerText = 'EN';
+        clearGoogleTranslateCookies();
     }
 });
